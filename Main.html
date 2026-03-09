@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidTutoring | Learn & Play</title>
+
+    <!-- Google Fonts for a friendly look -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS STYLES START HERE --- */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #f0faff; /* Light Blue background */
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, .logo {
+            font-family: 'Fredoka One', cursive;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10%;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: #ff6b6b;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #4dabf7;
+            font-weight: 600;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: #ff6b6b;
+        }
+
+        /* Hero Section (The Big Banner) */
+        .hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #ff922b 0%, #fcc419 100%);
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+        }
+
+        .highlight {
+            color: #2b8a3e; /* Green text */
+            background: white;
+            padding: 0 15px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 18px 40px;
+            background: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background: #fa5252;
+        }
+
+        /* Sign Up Section */
+        .signup-section {
+            padding: 60px 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            max-width: 500px;
+            width: 100%;
+            border: 4px solid #e7f5ff;
+        }
+
+        .form-container h2 {
+            color: #4dabf7;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .parent-note {
+            font-size: 0.95rem;
+            color: #868e96;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #495057;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-family: 'Quicksand', sans-serif;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: #4dabf7;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+        }
+
+        .checkbox-group input {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            background: #51cf66; /* Bright Green */
+            color: white;
+            font-size: 1.3rem;
+            font-family: 'Fredoka One', cursive;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 0px #2f9e44;
+        }
+
+        .submit-btn:hover {
+            background: #40c057;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0px #2f9e44;
+        }
+
+        .submit-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 0px 0px #2f9e44;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+
+        /* Tablet & Mobile Friendly */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            .form-container { padding: 25px; }
+            .navbar { padding: 15px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="logo">🌟 KidTutoring</div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#signup">Sign Up</a></li>
+        <li><a href="#aboutus">About Us</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<header id="home" class="hero">
+    <div class="hero-content">
+        <h1>Ready to become a <span class="highlight">Super Student?</span></h1>
+        <p>Fun tutors for Math, Science, and Reading!</p>
+        <a href="#signup" class="cta-button">Join the Adventure! 🚀</a>
+    </div>
+</header>
+
+<!-- Sign Up Section -->
+<section id="signup" class="signup-section">
+    <div class="form-container">
+        <h2>Start Your Journey</h2>
+        <p class="parent-note">Kids: Please ask a parent to help you fill this out! 🍎</p>
+
+        <form action="#">
+            <div class="form-group">
+                <label for="student-name">Student's Name</label>
+                <input type="text" id="student-name" placeholder="What is your name?" required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Favorite Subject</label>
+                <select id="subject" required>
+                    <option value="">Choose a subject...</option>
+                    <option value="math">🧮 Magic Math</option>
+                    <option value="science">🔬 Super Science</option>
+                    <option value="reading">📚 Awesome Reading</option>
+                    <option value="art">🎨 Creative Art</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="parent-email">Parent's Email</label>
+                <input type="email" id="parent-email" placeholder="mom-or-dad@email.com" required>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="consent" required>
+                <label for="consent">I have my parent's permission to sign up!</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Let's Go! ✨</button>
+        </form>
+    </div>
+</section>
+
+!-- Sign Up Section -->
+<section id="aboutus" class="aboutus-section">
+    <div class="form-container">
+        <h2>Start Your Journey</h2>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 KidTutoring Service. Safe & Fun Learning for Kids.</p>
+</footer>
+
+</body>
+</html>
